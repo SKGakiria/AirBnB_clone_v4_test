@@ -26,8 +26,9 @@ function apiStatus() {
 }
 
 function getPlaceAmenity() {
-  $.post({
+  $.ajax({
     url:'http://0.0.0.0:5001/api/v1/places_search/',
+    type: 'POST',
     headers: { 'Content-Type': 'application/json' },
     data: JSON.stringify({ amenities: Object.values(amenity) }),
     success: function (response) {
